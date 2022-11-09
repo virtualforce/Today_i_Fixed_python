@@ -13,34 +13,47 @@ The django package built on top of django-otp named as django two factor auth is
 In order to integrate two factor authentication in django there are particular steps that we need to follow and are listed in this file.
 
 # Solution
-**Install required packages:**  
+### Install required packages
+```
 pip install django-two-factor-auth  
-pip install phonenumbers  
-  
-**Modifications in Settings.py file:**  
+pip install phonenumbers
+```
+
+### Modifications in Settings.py file 
+
 Include apps in INSTALLED APPS section as follows:  
+```
 'django_otp',  
 'django_otp.plugins.otp_static',  
 'django_otp.plugins.otp_totp',  
 'two_factor',  
-  
-Include following Middleware in Middlewares section:  
+```
+
+Include following Middleware in Middlewares section: 
+```
 'django.contrib.auth.middleware.AuthenticationMiddleware',  
 'django_otp.middleware.OTPMiddleware',  
+```
   
-Update login url and login redirect url:  
+Update login url and login redirect url: 
+```
 LOGIN_URL = 'two_factor:login'  
 LOGIN_REDIRECT_URL = "/documents/"  
+```
 
-**Modifications in URL file:**  
+### Modifications in URL file
+```
 path("", include(tf_urls)),  
+```
   
-**Make Migrations and Migrate:**  
+### Make Migrations and Migrate
 Execute the following commands in terminal:  
+```
 python manage.py makemigrations  
 python manage.py migrate  
+```
   
-**Download HTML file for two factor auth and link css:**  
-Navigate to the link:https://github.com/jazzband/django-two-factor-auth  
+### Download HTML file for two factor auth and link css  
+Navigate to the link: https://github.com/jazzband/django-two-factor-auth  
 Download templates for 2fa and include them in templates folder for django application and link you application css with those templates.  
 Cheers we are done!  
