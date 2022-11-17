@@ -3,9 +3,9 @@ Usually variables and functions from other files are imported at the top and dur
 How to get their latest/original value after we modify them in current file as it doesn't refresh despite revoking multiple times.
 
 # Environment
-IDE Version : pyCharm Community Edition 2022.2.3
-Python Version: 3.8
-Flask Version: 2.2.2
+* IDE Version : pyCharm Community Edition 2022.2.3
+* Python Version: 3.8
+* Flask Version: 2.2.2
 
 # How you fix it
 
